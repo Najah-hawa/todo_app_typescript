@@ -36,6 +36,26 @@ markTodoCompleted(todoIndex: number): void {
   }
 
 
+// Uppdatera en todo
+    updateTodo(todoIndex: number, updatedTask: string, updatedPriority: number): boolean {
+      if (this.todos[todoIndex] && updatedTask.trim() !== "" && updatedPriority >= 1 && updatedPriority <= 3) {
+        this.todos[todoIndex].task = updatedTask;
+        this.todos[todoIndex].priority = updatedPriority;
+        this.saveToLocalStorage();
+        return true;
+      }
+      return false;
+    }
+
+  // Ta bort en todo
+  deleteTodo(todoIndex: number): void {
+    if (this.todos[todoIndex]) {
+      this.todos.splice(todoIndex, 1);
+      this.saveToLocalStorage();
+    }
+  }
+
+  
 // metod för att hämta hela listan av todos
 getTodos(): Todo[] {
     return this.todos;

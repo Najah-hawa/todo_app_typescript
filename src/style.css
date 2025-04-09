@@ -1,96 +1,395 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #deeade;
+  color: #333;
+  padding: 20px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Sidhuvud */
+header {
+  background-color: #4CAF50; /* Grön bakgrund */
+  color: #fff;
   text-align: center;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+h2 {
+  font-family: 'Arial', sans-serif;  
+  font-size: 1.3rem;  
+  font-weight: 600; 
+  background-color: #f9f9f9;  
+  color: #333;  
+  text-align: center;
+  margin: 20px 0;  
+  padding: 10px 0;  
+  letter-spacing: 1px;  
+  text-transform: uppercase;
+  border-bottom: 3px solid #4CAF50;  /* Lägg till en dekorativ linje under rubriken */ 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
 }
 
-button {
+
+h2:hover {
+  color: #2d392e;  /* Färgen ändras till den samma som underlinjen */
+  border-bottom-color: #8fb894;  /* Underlinjen ändras till en annan färg */
+}
+
+
+/* Formulär */
+.form-container {
+  margin: 30px 20%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+form {
+  width: 100%;
+  padding: 20px;
+  background-color: #f1f1f1; /* Ljusgrå bakgrund */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  border-radius: 20%;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid #ccc; /* Gray border */
+  color: #333;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  
+}
+
+form button:hover {
+  background-color: #ccc;
+}
+
+/* Lista av kurser */
+.course-list-container {
+  margin-top: 30px;
+  background-color: #ffffff;
+  padding: 10px 40px;
+}
+
+ul#course-list {
+  list-style-type: none;
+  
+}
+
+ul#course-list li {
+
+  align-items: center;
+  background-color: #b8bfaa52;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul#course-list li strong {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+ul#course-list li a{
+  text-decoration:none; 
+  color: black;
+}
+ul#course-list li a:hover{
+  text-decoration:underline; 
+  
+}
+
+ul#course-list li .delete-course{
+ margin-left: 25%;
+ width: 80px;
+ height: 30px;
+ border-radius: 8px;
+ background-color: transparent;
+ border: 2px solid #ccc; /* Gray border */
+ color: #333;
+ border-radius: 8px;
+ font-size: 1rem;
+ font-weight: bold;
+}
+ul#course-list li .delete-course:hover {
+  background-color: #ccc;
+}
+
+/* Sidfot */
+footer {
+  margin-top: 40px;
+  padding:   20px;
+  background-color: rgba(41, 43, 39, 0.497); /* Grön bakgrund */
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  border-radius: 10px;
+}
+footer .footer-left {
+  font-weight: bold;
+  margin-left: 40px;
+}
+
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+  .form-container {
+    justify-content: center;
   }
-  a:hover {
-    color: #747bff;
+
+  form {
+    width: 80%;
   }
-  button {
-    background-color: #f9f9f9;
+  ul#course-list li .delete-course{
+    margin-left: 5%;
   }
+
+}
+@media (max-width: 600px){
+  ul#course-list li .delete-course{
+    margin-left: 0%;
+    margin-top: 5px;
+  }
+  .form-container {
+     margin: 10px 5%;
+}
+}* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #deeade;
+  color: #333;
+  padding: 20px;
+}
+
+/* Sidhuvud */
+header {
+  background-color: #4CAF50; /* Grön bakgrund */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+h2 {
+  font-family: 'Arial', sans-serif;  
+  font-size: 1.3rem;  
+  font-weight: 600; 
+  background-color: #f9f9f9;  
+  color: #333;  
+  text-align: center;
+  margin: 20px 0;  
+  padding: 10px 0;  
+  letter-spacing: 1px;  
+  text-transform: uppercase;
+  border-bottom: 3px solid #4CAF50;  /* Lägg till en dekorativ linje under rubriken */ 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+}
+
+
+h2:hover {
+  color: #2d392e;  /* Färgen ändras till den samma som underlinjen */
+  border-bottom-color: #8fb894;  /* Underlinjen ändras till en annan färg */
+}
+
+
+/* Formulär */
+.form-container {
+  margin: 30px 20%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.todo-form {
+  width: 100%;
+  padding: 20px;
+  background-color: #f1f1f1; /* Ljusgrå bakgrund */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.todo-form input {
+  display: block;
+  font-weight: bold;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.todo-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid #ccc; /* Gray border */
+  color: #333;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  
+}
+
+.todo-form button:hover {
+  background-color: #ccc;
+}
+
+/* Lista av todos */
+.todo-list-container {
+  margin-top: 30px;
+  background-color: #ffffff;
+  padding: 10px 40px;
+}
+
+ul#todoList{
+  list-style-type: none;
+  
+}
+
+ul#todoList li {
+
+  align-items: center;
+  background-color: #b8bfaa52;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+ul#todoList li strong {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.btn{
+ margin-left: 30px;
+ padding:5px;
+ height: 30px;
+ border-radius: 8px;
+ background-color: transparent;
+ border: 2px solid #ccc; /* Gray border */
+ color: #333;
+ border-radius: 8px;
+ font-size: 1rem;
+ font-weight: bold;
+}
+.btn:hover {
+  background-color: #ccc;
+}
+.btn-klar {
+  background-color: #92d39d; /* Röd */
+}
+.btn-update {
+  background-color: #7cc9a1; /* Röd */
+}
+.btn-delete {
+  background-color: #cf7672; /* Röd */
+}
+/* Sidfot */
+footer {
+  margin-top: 40px;
+  padding:   20px;
+  background-color: rgba(41, 43, 39, 0.497); /* Grön bakgrund */
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  border-radius: 10px;
+}
+footer .footer-left {
+  font-weight: bold;
+  margin-left: 40px;
+}
+
+
+@media (max-width: 800px) {
+  header h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+  h2{
+  font-size: 1.1rem;
+  }
+  .form-container {
+    justify-content: center;
+  }
+
+  form {
+    width: 80%;
+  }
+  .todo-form button {
+    font-size: medium;
+  }
+  .btn{
+    margin-left: 10px;
+    height: 30px;
+    font-size: small;
+   }
+
+}
+@media (max-width: 690px){
+
+  .form-container {
+     margin: 10px 5%;
+    }
+  .btn{
+  margin-left: 5px;
+  height: 30px;
+    }
+
+}
+@media (max-width: 400px){
+
+
+  .btn{
+  font-size: x-small;
+  height: auto;
+    }
+    
 }
