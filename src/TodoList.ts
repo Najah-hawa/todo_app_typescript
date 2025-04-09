@@ -41,6 +41,7 @@ markTodoCompleted(todoIndex: number): void {
       if (this.todos[todoIndex] && updatedTask.trim() !== "" && updatedPriority >= 1 && updatedPriority <= 3) {
         this.todos[todoIndex].task = updatedTask;
         this.todos[todoIndex].priority = updatedPriority;
+        this.todos[todoIndex].completed = false; // Sätt completed till false, för att todo ska markeras igen som "Inte klar"
         this.saveToLocalStorage();
         return true;
       }
